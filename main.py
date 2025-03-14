@@ -151,21 +151,15 @@ if submit:
         for error in errors:
             st.error(error)
     else:
-        # Save data to CSV
-        application_data = {
-            "application_no": application_no,
-            "name": name,
-            "email": email,
-            "district": district,
-            "phone": phone,
-            "rank_no": rank_no,
-            "cutoff_marks": cutoff_marks,
-            "department": selected_department,
-            "community": selected_community
-        }
+        # Recommend Colleges
+        colleges = recommend_colleges(database, selected_department, selected_community, cutoff_marks)
+        st.markdown('<h2 class="fadeIn">🎯 Recommended Colleges:</h2>', unsafe_allow_html=True)
+        for college in colleges:
+            st.success(f"🏫 {college}")
 
-        # Define the CSV file path
-        csv_file = 'applications_data.csv'
+        # Save recommended colleges to CSV
+        csv_file = 'recommended_colleges.csv'
+        recommended_data = [{"College": college} for college in colleges]
 
         # Check if the CSV file exists, if not, create it with headers
         file_exists = False
@@ -177,32 +171,20 @@ if submit:
 
         # Append data to CSV or create file with headers if it doesn't exist
         with open(csv_file, mode='a', newline='', encoding='utf-8') as file:
-            writer = csv.DictWriter(file, fieldnames=application_data.keys())
+            writer = csv.DictWriter(file, fieldnames=["College"])
 
             # If the file doesn't exist, write headers
             if not file_exists:
                 writer.writeheader()
 
-            # Write the application data
-            writer.writerow(application_data)
+            # Write the recommended colleges
+            writer.writerows(recommended_data)
 
-        # 🎈🎊 Success Animation
-        #st.balloons()  
-        time.sleep(1)
-        st.markdown('<h2 class="fadeIn">🎯 Recommended Colleges:</h2>', unsafe_allow_html=True)
-
-        colleges = recommend_colleges(database, selected_department, selected_community, cutoff_marks)
-        for college in colleges:
-            st.success(f"🏫 {college}")
-
-        # Commented-out code for downloading the CSV file
-        """
-        # Add a download button for the CSV file
+        # Provide a download button for the recommended colleges CSV
         with open(csv_file, "rb") as f:
             st.download_button(
-                label="Download CSV",
+                label="Download Recommended Colleges",
                 data=f,
                 file_name=csv_file,
                 mime="text/csv"
             )
-        """
