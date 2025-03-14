@@ -196,7 +196,7 @@ if submit:
             st.success(f"🏫 {college}")
 
         # Commented-out code for downloading the CSV file
-        """
+        
         # Add a download button for the CSV file
         with open(csv_file, "rb") as f:
             st.download_button(
@@ -205,4 +205,4 @@ if submit:
                 file_name=csv_file,
                 mime="text/csv"
             )
-        """
+        
