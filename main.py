@@ -1,9 +1,7 @@
-
 import streamlit as st
 import json
 import time
 import csv
-
 
 def load_database(json_file):
     try:
@@ -196,12 +194,3 @@ if submit:
         colleges = recommend_colleges(database, selected_department, selected_community, cutoff_marks)
         for college in colleges:
             st.success(f"🏫 {college}")
-
-        # Add a download button for the CSV file
-        with open(csv_file, "rb") as f:
-            st.download_button(
-                label="Download CSV",
-                data=f,
-                file_name=csv_file,
-                mime="text/csv"
-            )
