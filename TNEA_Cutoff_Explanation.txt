@@ -1,0 +1,6 @@
+
+For College Code 1, College Name 'University Departments of Anna University Chennai - CEG Campus Sardar Patel Road Guindy Chennai 600 025',
+- In the department 'Computer Science and Engineering' under the community 'BC', the minimum cutoff is 199.0 and the maximum cutoff is 199.5.
+- In the department 'Civil Engineering' under the community 'BC', the minimum cutoff is 190.0 and the maximum cutoff is 192.5.
+- In the department 'Computer Science and Engineering' under the community 'OC', the minimum cutoff is 200.0 and the maximum cutoff is 200.0.
+- In the department 'Mining Engineering' under the community 'SC', the minimum cutoff is 170.5 and the maximum cutoff is 183.0.
