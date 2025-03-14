@@ -1,1 +1,1 @@
-# [Pdf] (https://github.com/suyamburajesh/Vista/blob/main/Vista.pdf)
+(https://github.com/suyamburajesh/Vista/blob/main/Vista.pdf)
