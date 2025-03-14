@@ -198,10 +198,10 @@ if submit:
             st.success(f"🏫 {college}")
 
         # Add a download button for the CSV file
-       ''' with open(csv_file, "rb") as f:
+        with open(csv_file, "rb") as f:
             st.download_button(
                 label="Download CSV",
                 data=f,
                 file_name=csv_file,
                 mime="text/csv"
-            )'''
+            )
