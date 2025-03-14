@@ -93,7 +93,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<h1 class="fadeIn">🎓 College Recommendation System</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="fadeIn">🎓VISTA Virtual Intelligent System For TNEA Admissions</h1>', unsafe_allow_html=True)
 st.write("🚀 Find the best colleges based on your cutoff!")
 
 # Input Fields
@@ -133,7 +133,7 @@ if reset:
 
 # Submit Button Logic
 if submit:
-    with st.spinner("🔄 Processing..."):
+    with st.spinner("🔄 LLM Processing..."):
         time.sleep(2)  
 
     errors = []
